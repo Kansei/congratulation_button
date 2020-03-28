@@ -13,26 +13,21 @@ function App() {
         <div className="title-big">ボタン</div>
 
         <div className="buttons">
+          <div
+            className="button"
+            onClick={() => {
+              setIsOpen(true);
+              setPlaying(true);
+              setInterval(() => {
+                setPlaying(false);
+                setIsOpen(false);
+              }, 8000);
+            }}
+          >
+            PUSH START
+          </div>
 
-        <div
-          className="button"
-          onClick={() => {
-            setIsOpen(true);
-            setPlaying(true);
-            setInterval(() => {
-              setPlaying(false);
-              setIsOpen(false);
-            }, 7000);
-          }}
-        >
-          PUSH START
-        </div>
-
-        <div
-          className="money"
-        >
-          課金
-        </div>
+          <div className="money">課金</div>
         </div>
 
         <ReactPlayer
@@ -44,7 +39,11 @@ function App() {
       </div>
 
       <div className={["congra", isOpen ? "show" : ""].join(" ")}>
-        <img src="/congraturation_image.png" alt="congra" className="congra-image"/>
+        <img
+          src="/congraturation_image.png"
+          alt="congra"
+          className="congra-image"
+        />
       </div>
     </div>
   );
